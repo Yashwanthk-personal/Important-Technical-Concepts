@@ -1,0 +1,35 @@
+ To be Continued.. to topic TestNG Assertions 
+
+🎯 When to use Hard & Soft Assertion?
+
+🔰 Use Hard Assertion :- Scenario would be like login test scenario where if the login test fails, the test case execution must be terminated with an exception as 
+there is no point of moving further without logging into the system.
+ 
+🔰 Use Soft Assertion :- Soft Assertion is best used in case where the test statements of a test case are not dependent on each other. E.g. if you are validating a 
+form in which there are multiple fields to be validated, hence it is recommended to soft assert all the fields and then call assertAll() to throw all exceptions at 
+the end of the test case. 
+
+✴ TestNG Assert Methods :- Most commonly used assertions in testing framework is like mentioned below..
+
+👉 Assert.assertEqual (String actual, String expected) :- It accepts 2 parameters i.e. the actual value & expected value to validate if the actual string is equal to 
+the expected string. The exception is thrown if both the strings are not equal.
+ 
+👉 Assert.assertEqual (String actual, String excepted, String message) :- This is similar to the assertion method mentioned above, the only difference is that this 
+method can accept one more string parameter as a message. In case assertion condition not met, the exception thrown along with error message passed here.
+ 
+👉 Assert.assertEquals (boolean actual, boolean expected ) :- This assertion method accepts two boolean values and validates if both are equal or not.
+
+👉 Assert.assertTrue (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns true or not. If the condition returns 
+false, the assertion error is thrown. 
+
+👉 Assert.assertTrue (condition, message ) :- It is similar to assertion method discussed in the previous one, the only difference is that here this method accepts one 
+more parameter as a message. In case the assert condition is passed as false, the assertion error is thrown along with a message passed here.
+
+👉 Assert.assertFalse (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns false or not. If the condition returns 
+true, the assertion error is thrown.
+ 
+👉 Assert.assertFalse (condition, message) :- It is similar to previous one only difference is that this method can accept one more string parameter as message. In case the assertion condition is passed as true, the assertion error is thrown along with a message passed here.
+
+👉 Assert.assertNull (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns null or not. If the condition doesn't return null, the assertion error is thrown. 
+
+👉Assert.assertNotNull (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns value except null or not. If the condition returns null, the assertion error is thrown.
