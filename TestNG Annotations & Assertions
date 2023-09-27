@@ -1,3 +1,55 @@
+TestNG Annotations :-
+TestNG uses annotations to define & control the flow of test methods and allow you to define the order in which your methods execute. Annotations allows you to 
+customize the behavior of your test cases, set up preconditions, manage resources, and define data sources for your test methods. You can use them to create 
+well-organized, controlled and well-documented test suites using TestNG. Some of the commonly used TestNG annotations are.....
+
+👉 @Test :- Marks a method as a test method. Test methods are the actual test cases you want to execute.
+
+👉 @BeforeSuite :- Indicates that a method should run before all test within a test suit XML file.
+
+👉 @AfterSuite :- Specifies that a method should run after all test suites within a test suit XML file.
+
+👉 @BeforeTest :- Denotes a method that should run before all test methods belonging to a <test> tag in the test suite XML.
+
+👉 @AfterTest :- Indicates that a method should run after all test methods belonging to a <test> tag in the test suite XML.
+
+👉 @BeforeClass :- Marks a method to run once before any test methods in the same class. Useful for setting up class-level resources.
+
+👉 @AfterClass :- Specifies that a method should run once after all test methods in the same class. Useful for performing cleanup or finalization task for 
+class-level resources.
+
+👉 @BeforeMethod :- Denotes a method that should run before each test method within the class. Useful for setting up common preconditions for multiple test methods.
+
+👉 @AfterMethod :- Specifies that a method should run after each test method within the class. Useful for performing cleanup or resetting state between test methods.
+
+👉 @DataProvider :- Supplies data to test methods.
+➡ Example :
+@DataProvider
+public Object[][] testData() {
+// provide test data as two dimentional array.
+}
+
+👉 @Parameters :- Provides parameters to test methods from the test suite XML.
+➡Example :
+@Parameters({"username", "password"})
+@Test
+public void loginTest(String username, String password) {
+//Test logic using the provided parametes.
+}
+
+👉 @Factory :- Used to create instances of test classes. Useful for creating multiple instances of a test class with different configurations.
+➡Example :
+@Factory
+public Object[] createInstances(){
+//create and return instance of test class
+}
+
+👉 @Listeners :- Specifies listeners to be used with the test class. Listeners can monitor and report events during test execution.
+➡Example:
+@Listners(MyTestListeners.class)
+public class MyTestClass {
+//Test methods and annotations
+}
 
 To be Continued.. to topic TestNG Assertions 
 
