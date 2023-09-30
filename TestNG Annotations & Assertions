@@ -52,6 +52,31 @@ public class MyTestClass {
 }
 
 To be Continued.. to topic TestNG Assertions 
+Irrespective of any programming language, every test automation framework offers a mechanism of assertions for validating 
+the end result of a test scenarios. TestNG provides an Assert class that has multiple methods to raise asserts and to 
+implement assertions it is important to import required package which is " org.testng.Assert ".
+
+❄ Syntax of Assertion in TestNG :-
+
+ ==> Assert.methodName( actual, expected ) ;
+
+📌 Assert :- This is the class inbuilt in the TestNG framework. 
+📌 methodName :- This is the name of the Assert class method.
+📌 actual :- First parameter of the assert method in which the value is passed that the user gets from the application under test.
+📌 expected :- Second parameter of the assert method in which the user passes the expected value.
+
+⚡ Types of Assertions in TestNG :-
+
+🚀 Hard Assertion :-
+Whenever a hard assertion is applied and an assertion statement fails, the assertion in TestNG throws an exception 
+immediately and terminates the further execution of the same test case. It will continue with the execution of the next 
+test case in the test suite. As soon as the hard assertion condition fails, the test case is marked as failed. 
+ 
+🚀 Soft Assertion :- 
+To implement soft assertion in TestNG, we use a SoftAssert class and its method assertAll() to throw all the exceptions 
+collected during the test case execution. The soft assert basically performs assertion and if a condition fails to meet, 
+it doesn't throw an exception immediately, instead it continues with the next statement of the same test case until the 
+method assertAll () gets called to throw all the caught exceptions.
 
 🎯 When to use Hard & Soft Assertion?
 
