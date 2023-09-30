@@ -86,3 +86,60 @@ true, the assertion error is thrown.
 👉 Assert.assertNull (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns null or not. If the condition doesn't return null, the assertion error is thrown. 
 
 👉Assert.assertNotNull (condition) :- This assertion method is used to assert whether the condition passed in a parameter returns value except null or not. If the condition returns null, the assertion error is thrown.
+
+||Soft and hard assertions || - Difference. Important
+
+1. Hard Assertion:
+Hard assertions are the traditional assertions where the test execution stops immediately when an assertion failure occurs. If an assertion fails, the subsequent lines of code in the test method are not executed, and the test is marked as failed.
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HardAssertionExample {
+
+ @Test
+ public void testHardAssertion() {
+ int actualValue = 10;
+ int expectedValue = 20;
+
+ Assert.assertEquals(actualValue, expectedValue); // Assertion failure
+ System.out.println("This line will not be executed due to assertion failure");
+ }
+}
+
+In this example, the assertion fails, and the line of code after the assertion (`System.out.println(...)`) is not executed. Hard assertions are straightforward and effective when you want the test to stop immediately upon a failure.
+
+2. Soft Assertion:
+
+Soft assertions allow you to continue executing the remaining lines of code in a test method even if an assertion fails. All assertion failures are collected, and the test is marked as failed only after all assertions have been evaluated.
+To use soft assertions, you typically need to create an instance of the soft assertion class provided by the testing framework (e.g., `SoftAssert` in TestNG . After completing all assertions, you call a method to assert all the collected failures.
+
+import org.testng.asserts.SoftAssert;
+import org.testng.annotations.Test;
+
+public class SoftAssertionExample {
+
+ @Test
+ public void testSoftAssertion() {
+ SoftAssert softAssert = new SoftAssert();
+
+ int actualValue = 10;
+ int expectedValue = 20;
+
+ softAssert.assertEquals(actualValue, expectedValue); // Assertion failure
+
+ System.out.println("This line will be executed despite assertion failure");
+
+ // Assert all collected failures
+ softAssert.assertAll(); // Marks the test as failed if any assertion failed
+ }
+}
+
+In this example, the assertion fails, but the subsequent lines of code are still executed. The test result is marked as 
+failed only when "softAssert.assertAll()"" is called, indicating that all the assertions have been evaluated.
+
+Choosing Between Hard and Soft Assertions:
+- Use hard assertions when you want the test to stop immediately upon a failure. This can be helpful to prevent further 
+issues caused by unexpected failures.
+- Use soft assertions when you want to continue executing the entire test, collecting all assertion failures before 
+marking the test as failed. This can be useful to gather comprehensive test results without stopping the test at the first failure.
