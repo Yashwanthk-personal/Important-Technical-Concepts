@@ -1,6 +1,6 @@
-TestNG Annotations :-
-TestNG uses annotations to define & control the flow of test methods and allow you to define the order in which your methods execute. Annotations allows you to 
-customize the behavior of your test cases, set up preconditions, manage resources, and define data sources for your test methods. You can use them to create 
+TestNG Annotations :- TestNG uses annotations to define & control the flow of test methods and allow you to define 
+the order in which your methods execute. Annotations allows you to customize the behavior of your test cases, set 
+up preconditions, manage resources, and define data sources for your test methods. You can use them to create 
 well-organized, controlled and well-documented test suites using TestNG. Some of the commonly used TestNG annotations are.....
 
 👉 @Test :- Marks a method as a test method. Test methods are the actual test cases you want to execute.
